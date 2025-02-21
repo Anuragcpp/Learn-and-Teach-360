@@ -1,18 +1,12 @@
 package com.example.learnandteach360.presentation.Navigation
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import com.example.learnandteach360.presentation.screens.autn.LoginScreen
-import com.example.learnandteach360.presentation.screens.autn.SignUpScreen
 import com.example.learnandteach360.presentation.screens.dashbord.DashbordScreen
-import com.example.learnandteach360.presentation.screens.dashbord.HomeScreen
-import com.example.learnandteach360.utality.endpoints.DestinationScreen
+import com.example.learnandteach360.presentation.Navigation.endpoints.DestinationScreen
 
 @Composable
 fun MainNavHost(modifier: Modifier = Modifier) {
