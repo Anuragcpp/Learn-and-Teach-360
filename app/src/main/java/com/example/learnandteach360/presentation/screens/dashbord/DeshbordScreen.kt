@@ -9,6 +9,7 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -20,7 +21,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.learnandteach360.presentation.Navigation.DashbordGraph
 import com.example.learnandteach360.presentation.screens.dashbord.util.BottomNavItem
-import com.example.learnandteach360.utality.endpoints.DestinationScreen
+import com.example.learnandteach360.presentation.Navigation.endpoints.DestinationScreen
 
 @Composable
 fun DashbordScreen(navController: NavHostController = rememberNavController()) {
@@ -61,7 +62,7 @@ fun DashbordScreen(navController: NavHostController = rememberNavController()) {
                     )
                 }
             }
-        }
+        },
     ) { innerPadding ->
 
         DashbordGraph(navHostController = navController)

@@ -1,4 +1,4 @@
-package com.example.learnandteach360.utality.endpoints
+package com.example.learnandteach360.presentation.Navigation.endpoints
 
 sealed class DestinationScreen (var route : String) {
     object SignUpScreen : DestinationScreen("signup")
