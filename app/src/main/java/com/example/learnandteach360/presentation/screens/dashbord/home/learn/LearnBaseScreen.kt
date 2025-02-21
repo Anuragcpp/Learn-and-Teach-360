@@ -1,7 +1,9 @@
 package com.example.learnandteach360.presentation.screens.dashbord.home.learn
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -11,10 +13,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
+import com.example.learnandteach360.presentation.Navigation.endpoints.LearnScreenRoute
 import com.example.learnandteach360.presentation.screens.common.SearchBar
+import com.example.learnandteach360.presentation.screens.common.TopAppBar
 
 @Composable
-fun LearnBaseScreen(modifier: Modifier = Modifier) {
+fun LearnBaseScreen(
+
+) {
+
+    val navController = rememberNavController()
+    var selectedScreen by remember {
+        mutableStateOf(LearnScreenRoute.OnlineProgram.route)
+    }
 
     Column (
         modifier = Modifier
@@ -30,6 +42,19 @@ fun LearnBaseScreen(modifier: Modifier = Modifier) {
             query = searchQuery,
             oneSearchQuery = {searchQuery = it}
         )
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        TopAppBar(
+            navController = navController,
+            selectedScreen = selectedScreen
+        ) {
+            newScreen -> selectedScreen = newScreen
+        }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        LearnScreenNavigation(navController = navController)
 
     }
 
