@@ -8,4 +8,5 @@ sealed class DestinationScreen (var route : String) {
     object HomeScreen : DestinationScreen("home")
     object MyProgressScreen : DestinationScreen("myProgressScreen")
     object Courses : DestinationScreen("courses")
+    object LearnBaseScreen : DestinationScreen("learnBaseScreen")
 }

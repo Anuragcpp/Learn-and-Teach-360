@@ -1,6 +1,7 @@
 package com.example.learnandteach360.presentation.screens.common
 
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -29,8 +30,9 @@ fun SearchBar(
         onValueChange  = oneSearchQuery,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 20.dp, vertical = 10.dp)
-            .clip(RoundedCornerShape(12.dp)),
+            .padding(10.dp)
+            .clip(RoundedCornerShape(12.dp))
+            .height(50.dp),
         leadingIcon = {
             Icon(
                 imageVector = Icons.Default.Search,

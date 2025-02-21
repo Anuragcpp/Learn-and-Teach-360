@@ -1,6 +1,7 @@
 package com.example.learnandteach360.presentation.screens.dashbord.home
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -24,7 +25,9 @@ import androidx.compose.ui.unit.sp
 import com.example.learnandteach360.R
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    navigateToLearnScreen : () -> Unit
+) {
 
 
     Column (
@@ -55,7 +58,8 @@ fun HomeScreen() {
             .fillMaxWidth()
             .height(50.dp)
             .clip(RoundedCornerShape(12.dp))
-            .background(color = colorResource(id = R.color.button_orange)),
+            .background(color = colorResource(id = R.color.button_orange))
+            .clickable { navigateToLearnScreen() },
             contentAlignment = Alignment.Center
         ){
             Text(
