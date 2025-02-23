@@ -18,16 +18,13 @@ fun NavGraphBuilder.authNavGraph(navController: NavController) {
             LoginScreen (
                 navigateToSignUp = {
                     navController.navigate(DestinationScreen.SignUpScreen.route)
-                                   },
-                navigateToDashbord = {
-                    navController.navigate(DestinationScreen.DeshbordGraph.route)
-                }
+                                   }
             )
         }
 
         composable(DestinationScreen.SignUpScreen.route){
             SignUpScreen {
-                navController.navigate(DestinationScreen.LoginScreen.route)
+                navController.navigate(DestinationScreen.DeshbordGraph.route)
             }
         }
     }
