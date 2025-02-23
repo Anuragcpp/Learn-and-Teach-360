@@ -26,7 +26,8 @@ import com.example.learnandteach360.R
 
 @Composable
 fun HomeScreen(
-    navigateToLearnScreen : () -> Unit
+    navigateToLearnScreen : () -> Unit,
+    navigateToTeachScreen : () -> Unit
 ) {
 
 
@@ -76,7 +77,8 @@ fun HomeScreen(
             .fillMaxWidth()
             .height(50.dp)
             .clip(RoundedCornerShape(12.dp))
-            .background(color = colorResource(id = R.color.button_blue)),
+            .background(color = colorResource(id = R.color.button_blue))
+            .clickable { navigateToTeachScreen() },
             contentAlignment = Alignment.Center
         ){
             Text(

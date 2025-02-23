@@ -12,16 +12,35 @@ fun LearnScreenNavigation(navController: NavHostController) {
 
     NavHost(navController = navController, startDestination = LearnScreenRoute.OnlineProgram.route ) {
         composable(LearnScreenRoute.OnlineProgram.route){
-            OnlineProgramScreen()
+            OnlineProgramScreen{
+                navController.navigate(LearnScreenRoute.ProgramDetailsScreen.route)
+            }
         }
 
         composable(LearnScreenRoute.OfflineProgram.route){
-            OfflineProgramScreen()
+            OfflineProgramScreen{
+                navController.navigate(LearnScreenRoute.ProgramDetailsScreen.route)
+            }
         }
 
         composable(LearnScreenRoute.Courses.route){
-            CoursesScreen()
+            CoursesScreen{
+                navController.navigate(LearnScreenRoute.ProgramDetailsScreen.route)
+            }
         }
+
+        composable(LearnScreenRoute.ProgramDetailsScreen.route){
+            ProgramDetailScreen{
+                navController.navigate(LearnScreenRoute.RegistrationScreen.route)
+            }
+        }
+
+        composable(LearnScreenRoute.RegistrationScreen.route){
+            RegistrationScreen ()
+        }
+
+
+
 
     }
 

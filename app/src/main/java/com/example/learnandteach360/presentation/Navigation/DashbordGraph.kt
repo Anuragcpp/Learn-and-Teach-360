@@ -8,7 +8,9 @@ import com.example.learnandteach360.presentation.screens.dashbord.CoursesScreen
 import com.example.learnandteach360.presentation.screens.dashbord.home.HomeScreen
 import com.example.learnandteach360.presentation.screens.dashbord.MyProgressScreen
 import com.example.learnandteach360.presentation.Navigation.endpoints.DestinationScreen
+import com.example.learnandteach360.presentation.Navigation.endpoints.TeachScreenRoute
 import com.example.learnandteach360.presentation.screens.dashbord.home.learn.LearnBaseScreen
+import com.example.learnandteach360.presentation.screens.dashbord.home.teach.TeachBaseScreen
 
 @Composable
 fun DashbordGraph(navHostController: NavHostController) {
@@ -21,9 +23,8 @@ fun DashbordGraph(navHostController: NavHostController) {
     ) {
 
         composable(DestinationScreen.HomeScreen.route){
-            HomeScreen{
-                navHostController.navigate(DestinationScreen.LearnBaseScreen.route)
-            }
+            HomeScreen(navigateToLearnScreen = {navHostController.navigate(DestinationScreen.LearnBaseScreen.route)},
+                navigateToTeachScreen = {navHostController.navigate(DestinationScreen.TeachBaseScreen.route)})
         }
 
         composable(DestinationScreen.MyProgressScreen.route){
@@ -36,6 +37,10 @@ fun DashbordGraph(navHostController: NavHostController) {
 
         composable(DestinationScreen.LearnBaseScreen.route){
             LearnBaseScreen()
+        }
+
+        composable(DestinationScreen.TeachBaseScreen.route){
+            TeachBaseScreen()
         }
     }
 
